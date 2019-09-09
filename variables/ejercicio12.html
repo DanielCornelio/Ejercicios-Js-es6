@@ -5,9 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Ejercicio 12</title>
+    <script>
+        let contador;
+        contador = 1;
+        
+        while(contador < 5){
+            let dato = prompt("introduce un numero del 1 al 10");
+            let num = parseInt(dato);
+
+            document.write(`El numero introducido es ${num} `);
+            document.write(`El contador es ${contador}`);
+            contador++;
+        }
+        document.write(`<br/><h2>Fin del programa contador ya no es menor que 5</h2>`);
+        document.write(`</br> ultimo numero introducido es ${num}`);
+    </script>
 </head>
 <body>
-    
 </body>
 </html>

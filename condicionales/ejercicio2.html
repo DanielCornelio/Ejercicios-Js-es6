@@ -1,0 +1,29 @@
+<!-- Ejercicio 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let dato1 = window.prompt('Ingrese la primer calificacion');
+        let nota1 = parseInt(dato1);
+        let dato2 = window.prompt('Ingrese la segunda calificacion');
+        let nota2 = parseInt(dato2);
+        let dato3 = window.prompt('Ingrese la tercera calificacion');
+        let nota3 = parseInt(dato3);
+
+        let promedio = (nota1 + nota2 + nota3) / 3;
+
+        if(promedio > 5){
+            document.write(`la nota final es aprobatoria - ${promedio}`);
+        }else{
+            document.write(`la nota final es reprobatoria - ${promedio}`);
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

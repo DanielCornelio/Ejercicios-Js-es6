@@ -1,0 +1,27 @@
+<!-- Ejercicio 8  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let origen, destino, descuento=0;
+        origen = prompt('Ingresa tu ciudad de Origen:');
+        destino = prompt('Ingresa tu ciudad de Destino');
+        if(origen == 'Palma' && destino == 'Barcelona'){
+            descuento = document.write(`tu descuento es de 5%`);
+        }else if (origen == 'Palma' && destino == 'Madrid' ){
+            descuento = document.write(`tu descuento es del 10%`);
+        }else if(origen == 'Palma' && destino == 'Valencia' ){
+            decuento = document.write(`tu descuento es de 15%`);
+        }else{
+            document.write(`Ingrese una ciudad de origen y una ciudad de destino valida`);
+        }
+        
+    </script>
+</body>
+</html>
