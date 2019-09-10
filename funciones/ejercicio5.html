@@ -1,0 +1,24 @@
+<!-- Ejercicio 5 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let grado = prompt('Ingrese el grado');
+        let gradoInt = parseInt(grado);
+        let pasarFahrenheit = (grado) =>{return Fahrenheit = grado * 1.8 + 32};
+        let pasarCelcius = (grado)=>{return celcius = ((grado -32) / 1.8)};
+
+        let resultado = pasarFahrenheit(gradoInt);
+        let result = pasarCelcius(gradoInt);
+
+    </script>
+    <button onclick ="document.write(`El grado ${gradoInt} pasado a celcius es ${pasarFahrenheit(resultado)}`)">Fahrenheit</button>
+    <button onclick ="document.write(`El grado ${gradoInt} pasado a celcius es ${pasarCelcius(result)}`)">Celcius</button>
+</body>
+</html>

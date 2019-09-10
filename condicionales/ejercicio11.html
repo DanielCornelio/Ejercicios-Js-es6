@@ -1,0 +1,30 @@
+<!-- Ejercicio 11  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let dia, mes, año;
+    mes = prompt('ingrese el numero correspondiente al mes que desea consultar');
+    mes = parseInt(mes);
+    if(mes <= 12) {
+        if( mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12){
+            document.write('tienen 31 dias');
+        }else{
+            if ( mes == 2){
+                document.write('Este mes puede tener 28 o 29 dias');
+            }else{
+                document.write('Este mes tiene 30 dias');
+            }
+        }
+    }else{
+        document.write('ingrese un valor valido');
+    }
+    </script>
+</body>
+</html>

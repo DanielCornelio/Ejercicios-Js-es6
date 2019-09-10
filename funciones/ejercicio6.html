@@ -1,0 +1,28 @@
+<!-- Ejercicio 6 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let persona1 = prompt('ingrese persona 1');
+        let persona2 = prompt('ingrese prsona 2');
+
+        function Saludo(persona1, persona2){
+            document.getElementById("salida").innerHTML = `hola ${persona1} y ${persona2}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Funcion con 2 parametros</h1>
+    <p>saluda a 2 personas</p></br>
+    <p id="salida">Aqui el resultado</p>
+
+    <script>
+        Saludo(persona1, persona2);
+    </script>
+
+</body>
+</html>
