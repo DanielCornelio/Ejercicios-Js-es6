@@ -7,18 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        let dato1, dato2;
-        dato1 = prompt("Ingresa el primer valor");
-        dato1 = parseInt(dato1);
-        dato2 = prompt("Ingresa el segundo valor");
-        dato2 = parseInt(dato2);
-
-        function Sumar(dato1, dato2){
-            document.getElementById("salida".innerHtml = `la suma de ${dato1} mas ${dato2} es igual a ${Sumar(dato1 + dato2)}`;)
-        }
+        
     </script>
 </head>
-<body>
-      <div id="salida"></div> 
+<body>  
+      <div id="salida">resultado</div> 
+      <div id="salida2">resultado</div> 
+      <script>
+let dato1, dato2, dato3;
+        dato1 = prompt("Ingresa el p;rimer valor");
+        console.log("promt1->", dato1);
+        dato2 = prompt("Ingresa el segundo valor");
+        console.log("promt2->", dato2);
+        dato3 = prompt("Ingresa el tercer valor");
+        console.log("promt3->", dato3);
+        let suma = sumar(dato1, dato2);
+        // El inner no funciona si se coloca antes de que se cree el elemento de HTML
+        // Primero se crea codigo HTML y abajo se coloca el JS
+        document.getElementById("salida").innerHTML = `La suma de ${dato1} + ${dato2} = ${suma}`;
+
+        let suma2 = sumar(suma, dato3);
+        document.getElementById("salida2").innerHTML = `La suma de ${suma} + ${dato3} = ${suma2}`;
+        
+        function sumar(num1 , num2){
+            // Yo al menos siempre checo en consola que datos estoy enviando
+            console.log("Sumar->", num1, num2);
+            return parseInt(num1) + parseInt(num2);
+            
+        }
+
+      let a = sumar(dato1 , dato2);
+      console.log("Valor a->", a)
+      let b = sumar(a, 4);
+      console.log("Valor b->", b)
+      </script>
 </body>
 </html>
