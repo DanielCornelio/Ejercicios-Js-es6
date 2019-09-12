@@ -1,0 +1,23 @@
+<!-- Ejercicio 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function porcentaje(){
+            let num1 = document.fdatos.entrada.value;
+            let resultado = parseInt(num1) * .10;
+            document.write(`El dato ingresado es: ${num1} el descuento del 10% es : ${resultado}`);
+        }
+    </script>
+</head>
+<body>
+    <form name="fdatos">
+        Escribe un valor: <input type="text" name="entrada">
+        <input type="button" value="da click" onclick="porcentaje()">
+    </form>
+</body>
+</html>

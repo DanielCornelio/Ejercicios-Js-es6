@@ -1,0 +1,25 @@
+<!-- Ejercicio 4 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function calcularPotencia(){
+            base = document.datos.base.value;
+            potencia = document.datos.potencia.value;
+            document.getElementById("salida").innerHTML = Math.pow(base, potencia);
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="datos">
+        Escribe la base: <input type="text" name="base">
+        Escribe la potencia: <input type="text" name="potencia">
+        <input type="button" value="calcular" onclick="calcularPotencia()">
+    </form>
+    <div id="salida"></div>
+</body>
+</html>
