@@ -7,18 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        function celToFah(){
-            let grado = document.fdatos.entrada.value;
-            let convertir = (grado * 1.8) + 32;
-            document.getElementById("salida").innerHTML = convertir; 
+        function recibirDatoCel(){
+            return document.fdatos.entrada_cel.value
         }
-    </script>
+
+        function printResult(dato){
+            document.getElementById("salida").innerHTML = dato; 
+        }
+
+        function celToFah(){
+            //let grado = document.fdatos.entrada.value;
+            //let convertir = (grado * 1.8) + 32;
+            //document.getElementById("salida").innerHTML = convertir; 
+            let grado = recibirDatoCel();
+            document.getElementById("salida").innerHTML = convertCelToFah(grado); 
+        }
+        function celToFah2(grado){
+            printResult(convertCelToFah(grado));
+        }
+        function convertCelToFah(grado){
+            return (grado * 1.8) + 32
+        }
+
+        // Fahrenheit
+        function recibirDatosFah(){
+            return document.fdatos.entrada_far.value = grado;
+        }
+        function convertirFahToCel(grado){
+            return ((grado - 32) * (5/9));
+        }
+        function printFahToCel(){
+            // no estas enviando ningun dato al convertirFathToCel
+            let grado = convertirFahToCel(document.fdatos.entrada_far.value);//<---
+            document.getElementById("salida").innerHTML = convertirFahToCel(grado); 
+        }
+
+    </script>   
 </head>
 <body>
     <form name="fdatos">
-        Escribe un valor: <input type="text" name="entrada">
-        <input type="button" onclick="celToFah()" value="Click me!!">
-
+        Escribe un valor Celcius: <input type="text" name="entrada_cel">
+        <br>
+        Escribe un valor Farein: <input type="text" name="entrada_far">
+        <input type="button" onclick="celToFah2(document.fdatos.entrada_cel.value)" value="Convertir Celcius a Farein">
+        <input type="button" onclick="printFahToCel()" value="Convertir Farein a Celcius">
     </form>
     <div id="salida"></div>
 </body>

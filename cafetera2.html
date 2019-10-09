@@ -1,0 +1,85 @@
+<!--  
+Si le das click iniciando a encender y no le has dado en cargar cafe te mande mensaje de que primero debes cargar cafe
+Si le das click iniciando a encender y no le has dado en cargar agua te mande mensaje de que primero debes cargar agua
+que maneje un estatus la cafetera
+y que te lance que esta tus tiene la cafetera
+igual otro boton que diga
+- Limpiar Cafetera
+para dejarla en el estado iniciar
+todo eso lo puedes hacer con funciones
+esta facil no? -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="resultado"></div>
+    <div class="contenedorBotones">
+        <button class="boton" onclick="validarInsumos()">Validar Insumos</button>
+        <button class="boton" onclick="addCoffe()">Cargar Cafe</button>
+        <button class="boton" onclick="addWater()">Cargar Agua</button>
+        <button class="boton" onclick="preparar()">Preparar</button>
+        <button class="boton" onclick="servirCafe()">Servir Café</button>
+        <button class="boton" onclick="tazasPreparadas()">Tazas Preparadas</button>
+    </div>
+    <script>
+        let catalog_status = [
+            "Verifica que la cafetera contenga los insumos",
+            "Añadiendo Cafe",
+            "Añadiendo Agua",
+            "Preparando Cafe",
+            "Disfrute de su Café",
+            "Sirviendo",
+            "Sirvete tu cafecito"
+        ];
+        let coffe = false;
+        let water = false;
+        let num_tazas = 0;
+        let tazas_preparadas = 0;
+        
+        function validarInsumos(){
+            if(coffe && water){
+                document.getElementById('resultado').innerHTML = "Contiene Agua y Cafe";
+                return true;
+            }else{
+                document.getElementById('resultado').innerHTML = catalog_status[0];
+                return false;
+            }
+        }      
+        function addCoffe(){
+            coffe = true
+            document.getElementById('resultado').innerHTML = catalog_status[1];
+        }
+        function addWater(){
+            water = true;
+            // num_tazas = num_tazas+= 1;  
+            document.getElementById('resultado').innerHTML = catalog_status[2] ;
+        }
+        function preparar(){
+            if(validarInsumos()){
+                tazas_preparadas = 20;
+                document.getElementById('resultado').innerHTML = catalog_status[3] + tazas_preparadas;
+            }else{
+                document.getElementById('resultado').innerHTML = catalog_status[0];
+            }
+        }
+        function servirCafe(){
+            if(num_tazas <= num_tazas && num_tazas > 1){
+                num_tazas -= 1;
+                document.getElementById('resultado').innerHTML = catalog_status[5] + num_tazas;
+                setTimeout(()=>{document.getElementById('resultado').innerHTML = catalog_status[4];},3000);
+            }else{
+                document.getElementById('resultado').innerHTML = "Echale Agua";
+            }
+        }
+        function tazasPreparadas(){
+            document.getElementById('resultado').innerHTML = num_tazas;
+        }
+    </script>
+</body>
+</html>
