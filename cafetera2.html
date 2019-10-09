@@ -44,41 +44,47 @@ esta facil no? -->
         
         function validarInsumos(){
             if(coffe && water){
-                document.getElementById('resultado').innerHTML = "Contiene Agua y Cafe";
+                imprimirResultado("Contiene Agua y Cafe");
                 return true;
             }else{
-                document.getElementById('resultado').innerHTML = catalog_status[0];
+                imprimirResultado(catalog_status[0]);
                 return false;
             }
         }      
         function addCoffe(){
             coffe = true
-            document.getElementById('resultado').innerHTML = catalog_status[1];
+            imprimirResultado(catalog_status[1]);
         }
         function addWater(){
             water = true;
             // num_tazas = num_tazas+= 1;  
-            document.getElementById('resultado').innerHTML = catalog_status[2] ;
+            imprimirResultado(catalog_status[2]);
         }
         function preparar(){
             if(validarInsumos()){
                 tazas_preparadas = 20;
-                document.getElementById('resultado').innerHTML = catalog_status[3] + tazas_preparadas;
+                imprimirResultado(catalog_status[3] + ' ' + tazas_preparadas);
             }else{
-                document.getElementById('resultado').innerHTML = catalog_status[0];
+                imprimirResultado(catalog_status[0]);
             }
         }
         function servirCafe(){
             if(num_tazas <= num_tazas && num_tazas > 1){
                 num_tazas -= 1;
-                document.getElementById('resultado').innerHTML = catalog_status[5] + num_tazas;
-                setTimeout(()=>{document.getElementById('resultado').innerHTML = catalog_status[4];},3000);
+                imprimirResultado(catalog_status[5] + num_tazas);
+                setTimeout(()=>{
+                    imprimirResultado(catalog_status[4]);
+                    },3000);
             }else{
-                document.getElementById('resultado').innerHTML = "Echale Agua";
+                imprimirResultado("Echale Agua");
             }
         }
         function tazasPreparadas(){
-            document.getElementById('resultado').innerHTML = num_tazas;
+            imprimirResultado(num_tazas);
+        }
+
+        function imprimirResultado(val){
+            document.getElementById('resultado').innerHTML = val;
         }
     </script>
 </body>
